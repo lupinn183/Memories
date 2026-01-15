@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peach Blossom Memory Universe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #050510; /* Deep space black/purple */
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        overflow: hidden; /* Prevent scroll on the body, let Canvas handle it */
+      }
+      /* Custom scrollbar for overlay elements */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(244, 114, 182, 0.5); /* Pink-400 */
+        border-radius: 3px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "three": "https://esm.sh/three@0.161.0",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@8.15.19?deps=three@0.161.0,react@18.2.0",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@9.102.6?deps=three@0.161.0,react@18.2.0,@react-three/fiber@8.15.19",
+    "@react-three/postprocessing": "https://esm.sh/@react-three/postprocessing@2.16.2?deps=three@0.161.0,react@18.2.0,@react-three/fiber@8.15.19,postprocessing@6.35.3",
+    "postprocessing": "https://esm.sh/postprocessing@6.35.3?deps=three@0.161.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0?deps=react@18.2.0",
+    "uuid": "https://esm.sh/uuid@9.0.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
