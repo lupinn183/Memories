@@ -193,7 +193,6 @@ app.use((error: any, req: Request, res: Response, next: NextFunction) => {
 });
 
 // Bắt đầu server
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, async () => {
   console.log(`Server đang chạy tại port ${PORT}`);
   await initializeDatabase();
