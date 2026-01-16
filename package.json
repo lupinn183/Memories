@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build-server": "tsc server.ts --outDir dist --module commonjs",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "@react-three/drei": "9.102.6",
