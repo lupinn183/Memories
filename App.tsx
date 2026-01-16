@@ -3,6 +3,28 @@ import { MemoryVerse } from './components/MemoryVerse';
 import { UIOverlay } from './components/UIOverlay';
 import { Memory } from './types';
 
+class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
+  constructor(props: {children: React.ReactNode}) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: any) {
+    console.error('App Error:', error);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <div className="w-full h-screen bg-black text-white flex items-center justify-center text-2xl">Error loading app</div>;
+    }
+    return this.props.children;
+  }
+}
+
 // Simple UUID generator fallback
 const generateId = () => Math.random().toString(36).substring(2, 9);
 
@@ -151,7 +173,7 @@ const App: React.FC = () => {
   return (
     <div className="w-full h-screen relative bg-black">
       {/* 3D Scene Layer */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute h-screen w-full inset-0 z-0">
         <MemoryVerse 
           memories={memories} 
           onMemoryClick={handleMemoryClick} 
@@ -176,4 +198,10 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default function AppWithErrorBoundary() {
+  return (
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
+  );
+}
