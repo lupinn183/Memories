@@ -44,6 +44,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 
+// Root endpoint
+app.get('/', (req: Request, res: Response) => {
+  res.json({ message: 'Memories API Server', version: '1.0.0' });
+});
+
 // API để upload file
 app.post('/api/upload', upload.single('file'), async (req: Request, res: Response) => {
   try {

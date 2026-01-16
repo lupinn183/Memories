@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build-server": "tsc server.ts --outDir dist --module commonjs",
-    "start": "node dist/server.js"
+    "start": "tsx server.ts"
   },
   "dependencies": {
     "@react-three/drei": "9.102.6",
