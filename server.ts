@@ -3,9 +3,13 @@ import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
 import { addFileToDb, getAllFiles, getFileById, deleteFileFromDb, initializeDatabase } from './database';
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
